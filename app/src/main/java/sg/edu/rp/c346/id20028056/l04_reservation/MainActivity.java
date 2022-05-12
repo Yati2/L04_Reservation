@@ -92,6 +92,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                etName.setText("");
+                etPhone.setText("");
+                etGpSize.setText("");
+                cbConfirm.setChecked(false);
+                rgSmoke.clearCheck();
+                setDefault();
+
+            }
+        });
         //challenges scenario 1
         tp.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
@@ -129,18 +141,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        btnReset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                etName.setText("");
-                etPhone.setText("");
-                etGpSize.setText("");
-                cbConfirm.setChecked(false);
-                rgSmoke.clearCheck();
-                setDefault();
-
-            }
-        });
     }
 
     private void setDefault() {
@@ -148,5 +148,6 @@ public class MainActivity extends AppCompatActivity {
         tp.setCurrentHour(8);
         tp.setCurrentMinute(00);
     }
+
 
 }
